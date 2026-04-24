@@ -5,12 +5,16 @@ class UserModel extends UserEntity {
     required super.id,
     required super.name,
     required super.email,
+    required super.phone,
+    required super.address,
   });
   Map<String, dynamic> toMap(){
     return{
       'id': id,
       'name': name,
       'email': email,
+      'phone': phone,
+      'address': address,
     };
   }
 
@@ -19,6 +23,8 @@ class UserModel extends UserEntity {
       id: map['id'],
       name: map['name'],
       email: map['email'],
+      phone: map['phone'],
+      address: map['address'],
     );
   }
 }
