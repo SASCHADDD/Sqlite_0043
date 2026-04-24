@@ -17,6 +17,8 @@ class UserFormPage extends StatefulWidget {
 class _UserFormPageState extends State<UserFormPage> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _addressController = TextEditingController();
 
   @override
   void initState() {
@@ -24,6 +26,8 @@ class _UserFormPageState extends State<UserFormPage> {
     if (widget.user != null) {
       _nameController.text = widget.user!.name;
       _emailController.text = widget.user!.email;
+      _phoneController.text = widget.user!.phone;
+      _addressController.text = widget.user!.address;
     }
   }
 
@@ -56,7 +60,8 @@ class _UserFormPageState extends State<UserFormPage> {
                     id: isEdit ? widget.user!.id : DateTime.now().millisecondsSinceEpoch.toString(),
                     name: _nameController.text,
                     email: _emailController.text,
-                    
+
+
                   );
 
                   if (isEdit) {
